@@ -1,5 +1,5 @@
 package com.workintech.s17d2.rest;
-
+import org.springframework.http.HttpStatus;
 import com.workintech.s17d2.model.*;
 import com.workintech.s17d2.tax.Taxable;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@RequestMapping("/workintech/developers")
+@RequestMapping("/developers")
 public class DeveloperController {
 
     // Map tanımı
@@ -61,6 +61,7 @@ public class DeveloperController {
 
     // POST
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Developer addDeveloper(@RequestBody Developer developer) {
 
         Developer newDeveloper = null;
@@ -108,6 +109,7 @@ public class DeveloperController {
 
     // PUT
     @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
     public Developer updateDeveloper(@PathVariable Integer id,
                                      @RequestBody Developer developer) {
 
