@@ -11,7 +11,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/developers")
-public class DeveloperController {
+public class DeveloperController { 
 
     // Map tanımı
     public Map<Integer, Developer> developers;
